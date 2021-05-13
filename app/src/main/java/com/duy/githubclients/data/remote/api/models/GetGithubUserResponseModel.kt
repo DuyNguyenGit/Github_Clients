@@ -1,4 +1,4 @@
-package ir.sdrv.mobilletsample.data.remote.api.models
+package com.duy.githubclients.data.remote.api.models
 
 import com.google.gson.annotations.SerializedName
 

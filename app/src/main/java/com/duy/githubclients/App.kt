@@ -1,7 +1,7 @@
 package com.duy.githubclients
 
 import android.app.Application
-import ir.sdrv.mobilletsample.app.modules.*
+import com.duy.githubclients.di.modules.*
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin

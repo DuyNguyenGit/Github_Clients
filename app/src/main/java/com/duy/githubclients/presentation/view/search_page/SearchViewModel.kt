@@ -1,14 +1,13 @@
 package com.duy.githubclients.presentation.view.search_page
 
-import android.util.Log
 import androidx.lifecycle.*
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
 import com.duy.githubclients.R
-import ir.sdrv.mobilletsample.data.remote.api.base.Status
-import ir.sdrv.mobilletsample.data.remote.api.models.GithubUserModel
-import ir.sdrv.mobilletsample.presentation.datasource.UsersListDataSource
-import ir.sdrv.mobilletsample.presentation.datasource.UsersListDataSourceFactory
+import com.duy.githubclients.data.remote.api.base.Status
+import com.duy.githubclients.data.remote.api.models.GithubUserModel
+import com.duy.githubclients.presentation.view.search_page.datasource.UsersListDataSource
+import com.duy.githubclients.presentation.view.search_page.datasource.UsersListDataSourceFactory
 import timber.log.Timber
 import java.util.concurrent.Executors
 
@@ -20,12 +19,11 @@ class SearchViewModel(private val usersListDataSourceFactory: UsersListDataSourc
     private val _isWaiting: MutableLiveData<Boolean> = MutableLiveData()
     val isWaiting: LiveData<Boolean> = _isWaiting
     val errorMessage: MutableLiveData<Int> = MutableLiveData()
-    val totalCount: MutableLiveData<Long> = MutableLiveData()
 
     init {
         _isWaiting.value = true
         errorMessage.value = null
-        dataSource = usersListDataSourceFactory.liveData
+        dataSource = usersListDataSourceFactory.source
         initUsersListFactory()
     }
 
@@ -71,14 +69,11 @@ class SearchViewModel(private val usersListDataSourceFactory: UsersListDataSourc
                     }
                 }
             })
-
-//        Transformations.switchMap(dataSource) { dataSource -> dataSource.totalCount }
-//            .observe(viewLifecycleOwner, Observer { totalCount ->
-//                totalCount?.let { this.totalCount.value = it }
-//            })
     }
 
-    fun search(query: String?) {
-
+    fun search(query: String) {
+        val search = query.trim()
+        if (usersListDataSourceFactory.getQuery() == search) return
+        usersListDataSourceFactory.updateQuery(search)
     }
 }

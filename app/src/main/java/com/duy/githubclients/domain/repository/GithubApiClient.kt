@@ -1,11 +1,12 @@
 package com.duy.githubclients.domain.repository
 
-import ir.sdrv.mobilletsample.data.remote.api.base.Resource
-import ir.sdrv.mobilletsample.data.remote.api.models.*
+import com.duy.githubclients.data.remote.api.base.Resource
+import com.duy.githubclients.data.remote.api.models.GetGithubUserResponseModel
+import com.duy.githubclients.data.remote.api.models.GithubUserModel
 
 interface GithubApiClient {
 
-    suspend fun getUsersList(page: Int, pageSize: Int): Resource<GetGithubUserResponseModel>
+    suspend fun getUsersList(query: String, page: Int, pageSize: Int): Resource<GetGithubUserResponseModel>
 
     suspend fun getUserInfo(username: String): Resource<GithubUserModel>
 }

@@ -1,6 +1,6 @@
-package ir.sdrv.mobilletsample.app.modules
+package com.duy.githubclients.di.modules
 
-import ir.sdrv.mobilletsample.presentation.datasource.UsersListDataSourceFactory
+import com.duy.githubclients.presentation.view.search_page.datasource.UsersListDataSourceFactory
 import org.koin.dsl.module
 
 val usersListDataSourceFactory = module {

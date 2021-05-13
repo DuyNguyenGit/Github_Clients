@@ -1,4 +1,4 @@
-package ir.sdrv.mobilletsample.data.remote.api.base
+package com.duy.githubclients.data.remote.api.base
 
 data class Resource<out T> (val status: Status, val data: T?, val message: String?) {
 

@@ -1,4 +1,4 @@
-package ir.sdrv.mobilletsample.app.modules
+package com.duy.githubclients.di.modules
 
 import com.duy.githubclients.presentation.view.detail_page.UserDetailViewModel
 import com.duy.githubclients.presentation.view.search_page.SearchViewModel

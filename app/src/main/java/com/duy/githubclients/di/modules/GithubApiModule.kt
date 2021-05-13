@@ -1,4 +1,4 @@
-package ir.sdrv.mobilletsample.app.modules
+package com.duy.githubclients.di.modules
 
 import com.duy.githubclients.BuildConfig
 import com.duy.githubclients.data.repository_impl.GithubApiClientImpl
@@ -6,7 +6,7 @@ import com.duy.githubclients.domain.repository.GithubApiClient
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import ir.sdrv.mobilletsample.data.remote.api.GithubApi
+import com.duy.githubclients.data.remote.api.GithubApi
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module

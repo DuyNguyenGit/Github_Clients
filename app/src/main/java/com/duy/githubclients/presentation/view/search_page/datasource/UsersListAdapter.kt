@@ -1,4 +1,4 @@
-package ir.sdrv.mobilletsample.presentation.datasource
+package com.duy.githubclients.presentation.view.search_page.datasource
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.duy.githubclients.R
-import ir.sdrv.mobilletsample.data.remote.api.models.GithubUserModel
+import com.duy.githubclients.data.remote.api.models.GithubUserModel
 
 class UsersListAdapter(private val listener: UsersListAdapterInteraction) :
     PagedListAdapter<GithubUserModel, UsersListAdapter.UsersListViewHolder>(usersDiffCallback) {

@@ -5,8 +5,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.duy.githubclients.domain.repository.GithubApiClient
-import ir.sdrv.mobilletsample.data.remote.api.base.Status
-import ir.sdrv.mobilletsample.data.remote.api.models.GithubUserModel
+import com.duy.githubclients.data.remote.api.base.Status
+import com.duy.githubclients.data.remote.api.models.GithubUserModel
 import kotlinx.coroutines.launch
 
 class UserDetailViewModel(private val githubApiClient: GithubApiClient) : ViewModel() {
